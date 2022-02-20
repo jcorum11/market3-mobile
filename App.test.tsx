@@ -1,12 +1,12 @@
 import React from 'react'
-import App from '.'
-import {renderer} from 'react-test-renderer'
+import App from './App'
+import { render } from '@testing-library/react-native'
 
 it('renders', async () => {
-  renderer.create(<App />)
+  render(<App />)
 })
 
 it('matches snapshot', async () => {
-  const tree = renderer.create(<App />).toJSON()
+  const tree = render(<App />).toJSON()
   expect(tree).toMatchSnapshot()
 })
