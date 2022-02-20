@@ -17,16 +17,33 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.steadyjingo.market3mobile"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.steadyjingo.market3mobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "sentry-expo"
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "algorhythmic-development",
+            "project": "market3-mobile",
+            "authToken": "66026552dc6040069d1cb3bb1f03cee8c8c0472826da429abaff5d714d4e2b96"
+          }
+        }
+      ]
     }
   }
 }
